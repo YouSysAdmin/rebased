@@ -54,7 +54,7 @@ open class RebasedProperties(private val communityHomeDir: Path) : JetBrainsProd
     platformPrefix = "Idea"
     applicationInfoModule = "intellij.idea.community.customization"
     scrambleMainJar = false
-    useSplash = true
+    useSplash = false
     buildCrossPlatformDistribution = true
     buildSourcesArchive = true
 
