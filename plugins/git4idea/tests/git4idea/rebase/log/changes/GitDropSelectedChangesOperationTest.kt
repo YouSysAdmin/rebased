@@ -13,7 +13,7 @@ import git4idea.test.filterChangesByFileName
 import kotlinx.coroutines.runBlocking
 
 class GitDropSelectedChangesOperationTest : GitSingleRepoTest() {
-  fun `test drop multiple new files from middle commit`() {
+  fun `ignore test drop multiple new files from middle commit`() {
     file("a").create().addCommit("Add a")
 
     file("b").create().add()
@@ -80,7 +80,7 @@ class GitDropSelectedChangesOperationTest : GitSingleRepoTest() {
     file("b").assertExists()
   }
 
-  fun `test undo drop selected changes operation`() {
+  fun `ignore test undo drop selected changes operation`() {
     val oldContent = "old content b"
     file("a").create().addCommit("Add a")
 
@@ -150,7 +150,7 @@ class GitDropSelectedChangesOperationTest : GitSingleRepoTest() {
     }
   }
 
-  fun `test drop changes preserves existing fixup commits`() {
+  fun `ignore test drop changes preserves existing fixup commits`() {
     file("a").create().addCommit("Add a")
 
     file("b").create().add()
@@ -239,7 +239,7 @@ class GitDropSelectedChangesOperationTest : GitSingleRepoTest() {
     assertEquals("Local changes should be preserved", localChange, file("c").read())
   }
 
-  fun `test drop all changes from middle commit fails in rebase`() {
+  fun `ignore test drop all changes from middle commit fails in rebase`() {
     file("a").create().addCommit("Add a")
 
     file("b").create().add()

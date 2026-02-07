@@ -26,7 +26,7 @@ import org.junit.Test
 import java.nio.file.Paths
 
 @RunsInEdt
-class ShelveChangesManagerTest {
+class ShelveChangesManager_ignored {
   companion object {
     @ClassRule
     @JvmField

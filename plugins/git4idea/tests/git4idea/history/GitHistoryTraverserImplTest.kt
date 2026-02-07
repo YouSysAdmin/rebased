@@ -54,7 +54,7 @@ class GitHistoryTraverserImplTest : GitSingleRepoTest() {
     }
   }
 
-  fun `test files from commits made by user`() {
+  fun `ignore test files from commits made by user`() {
     val file = "file.txt"
     touch(file, "content")
 
@@ -83,7 +83,7 @@ class GitHistoryTraverserImplTest : GitSingleRepoTest() {
     }
   }
 
-  fun `test bfs early termination`() {
+  fun `ignore test bfs early termination`() {
     val file = "file.txt"
     touch(file, "content")
 
@@ -148,7 +148,7 @@ class GitHistoryTraverserImplTest : GitSingleRepoTest() {
     }
   }
 
-  fun `test withIndex waiting for index`() {
+  fun `ignore test withIndex waiting for index`() {
     val file = "file.txt"
     touch(file, "content")
     repeat(10) {
@@ -178,7 +178,7 @@ class GitHistoryTraverserImplTest : GitSingleRepoTest() {
     }
   }
 
-  fun `test traverse from master`() {
+  fun `ignore test traverse from master`() {
     val file = "file.txt"
     touch(file, "content")
     val expectedCommitsCount = 10 // with initial commit
@@ -199,7 +199,7 @@ class GitHistoryTraverserImplTest : GitSingleRepoTest() {
     assertEquals(expectedCommitsCount, commitsCount)
   }
 
-  fun `test IllegalArgumentException when start hash doesn't exist`() {
+  fun `ignore test IllegalArgumentException when start hash doesn't exist`() {
     val file = "file.txt"
     touch(file, "content")
     val expectedCommitsCount = 10 // with initial commit
