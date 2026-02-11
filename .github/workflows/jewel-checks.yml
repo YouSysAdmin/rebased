@@ -71,34 +71,6 @@ jobs:
             run_formalities:
               - '!all(platform/jewel/ui/generated/org/jetbrains/jewel/ui/icons/AllIconsKeys.java)'
 
-  formalities:
-    name: PR formalities
-    runs-on: ubuntu-latest
-    needs: check_paths
-    if: needs.check_paths.outputs.run_formalities == 'true'
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-        name: Check out repository
-
-      - name: Grant execute permission to validation scripts
-        run: chmod +x ./scripts/validate-commit-message.sh && chmod +x ./scripts/validate-pr-commits.sh
-
-      - name: Validate PR has single commit
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: ./scripts/validate-pr-commits.sh
-
-      - name: Validate commit message
-        env:
-          GH_TOKEN: ${{ github.token }}
-          JEWEL_YT_TOKEN: ${{ secrets.JEWEL_YT_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: ./scripts/validate-commit-message.sh
-
   annotate_breaking_api_changes:
     name: Annotate breaking API changes with IJP dumps
     runs-on: ubuntu-latest
