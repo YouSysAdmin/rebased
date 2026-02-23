@@ -12,7 +12,7 @@ import kotlin.io.path.pathString
 
 class GitCloneLongPathsTest : GitSingleRepoTest() {
 
-  fun `ignore test clone repo with long paths`() {
+  fun `test clone repo with long paths`() {
     Assume.assumeTrue(SystemInfo.isWindows)
 
     git("config core.longpaths true")
