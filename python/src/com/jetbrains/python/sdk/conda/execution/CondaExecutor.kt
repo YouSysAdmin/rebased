@@ -3,6 +3,7 @@ package com.jetbrains.python.sdk.conda.execution
 
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.projectRoots.Sdk
+import com.intellij.openapi.util.IntellijInternalApi
 import com.intellij.platform.eel.isWindows
 import com.intellij.platform.eel.provider.osFamily
 import com.intellij.python.community.execService.BinOnEel
@@ -69,6 +70,7 @@ object CondaExecutor {
     ) { PyResult.success(Unit) }
   }
 
+  @OptIn(IntellijInternalApi::class)
   suspend fun listEnvs(binaryToExec: BinaryToExec, execService: ExecService = ExecService()): PyResult<CondaEnvInfo> {
     val args = listOf("env", "list", "--json")
     return runConda(

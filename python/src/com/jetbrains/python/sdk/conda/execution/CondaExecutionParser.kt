@@ -1,6 +1,7 @@
 // Copyright 2000-2025 JetBrains s.r.o. and contributors. Use of this source code is governed by the Apache 2.0 license.
 package com.jetbrains.python.sdk.conda.execution
 
+import com.intellij.openapi.util.IntellijInternalApi
 import com.jetbrains.python.packaging.common.PythonOutdatedPackage
 import com.jetbrains.python.packaging.conda.CondaPackage
 import com.jetbrains.python.sdk.conda.execution.models.CondaEnvInfo
@@ -27,6 +28,7 @@ internal object CondaExecutionParser {
   }
 
 
+  @OptIn(IntellijInternalApi::class)
   fun parseListEnvironmentsOutput(jsonContent: String): CondaEnvInfo {
     return json.decodeFromString<CondaEnvInfo>(jsonContent)
   }
