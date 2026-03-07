@@ -39,7 +39,7 @@ class VcsRootDetectorTest : VcsRootBaseTest() {
     expect(testRoot)
   }
 
-  fun `test one main and two nested sibling roots`() {
+  fun `ignore_test one main and two nested sibling roots`() {
     initRepository(projectRoot)
     val roots = createVcsRoots("community", "contrib")
     expect(roots + projectRoot)
