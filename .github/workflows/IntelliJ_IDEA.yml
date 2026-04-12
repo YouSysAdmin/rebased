@@ -2,10 +2,10 @@ name: Rebased
 on:
   push:
     branches:
-      - master
+      # i had to fix up the history of master due to the messed up way upstream releases are done.
+      # i didn't want to actually touch its history so i created a new master branch instead.
+      - master2
   pull_request:
-    branches:
-      - master
   workflow_dispatch:
     inputs:
       version:
