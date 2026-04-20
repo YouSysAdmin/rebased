@@ -10,6 +10,8 @@ body:
         
         > [!NOTE]
         > I would prefer to make minimal changes to the platform to reduce the risk of unintended bugs or other complications when merging upstream, so if your bug or feature request affects the upstream IntelliJ platform, please find or open an issue on [YouTrack](https://youtrack.jetbrains.com).
+        > 
+        > You're free to open an upstream issue here if you believe it deserves extra attention, but please include a link to the YouTrack issue.
   - type: textarea
     validations:
       required: false
