@@ -28,9 +28,11 @@
   </dependencies>
   <!-- endregion -->
   <extensions defaultExtensionNs="com.intellij">
-    <applicationActivity implementation="com.intellij.internal.statistic.updater.StatisticsJobsScheduler"/>
-    <applicationActivity implementation="com.intellij.internal.statistic.updater.StatisticsStateCollectorsScheduler"/>
-    <postStartupActivity implementation="com.intellij.internal.statistic.updater.StatisticsStateCollectorsSchedulerProjectActivity"/>
+    <!-- telemetry is disabled in rebased. ideally we'd disable this whole module but too many other core parts of the IDE seem to depend on it -->
+    <!-- so we just try to make it no-op instead -->
+    <!--<applicationActivity implementation="com.intellij.internal.statistic.updater.StatisticsJobsScheduler"/>-->
+    <!--<applicationActivity implementation="com.intellij.internal.statistic.updater.StatisticsStateCollectorsScheduler"/>-->
+    <!--<postStartupActivity implementation="com.intellij.internal.statistic.updater.StatisticsStateCollectorsSchedulerProjectActivity"/>-->
     <applicationSettings service="com.intellij.internal.statistic.persistence.UsageStatisticsPersistenceComponent"/>
     <applicationSettings service="com.intellij.internal.statistic.local.ContributorsLocalSummary"/>
     <applicationSettings service="com.intellij.internal.statistic.local.ActionsLocalSummary"/>
